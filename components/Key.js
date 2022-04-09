@@ -12,7 +12,7 @@ const Key = (props) => {
       note,
       keySource,
     })
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
   let keyKeyboardValue
   Object.getOwnPropertyNames(Keys).forEach((item) => {
     if (item === note) {

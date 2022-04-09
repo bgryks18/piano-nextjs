@@ -18,7 +18,7 @@ const PianoKeyboard = () => {
         }
       })
     })
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
   const playNote = useCallback((key, way, keySource) => {
     new Audio(keySource).play().then(() => {
       if (way === 'keyboard') {
@@ -36,7 +36,7 @@ const PianoKeyboard = () => {
         }
       }
     })
-  }, [])
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="keyboard">
       {Object.getOwnPropertyNames(Keys).map((item) => {

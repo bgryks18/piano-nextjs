@@ -6,7 +6,7 @@ const index = () => {
   return (
     <>
       <Head>
-        <title>Bugra's Piano App</title>
+        <title>Bugra&apos;s Piano App</title>
         <meta name="description" content="Playing piano app" />
         <meta name="keywords" content="Piano,Nextjs,Reactjs" />
         <meta name="author" content="Bugra Yuksel" />
