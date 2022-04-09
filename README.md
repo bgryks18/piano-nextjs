@@ -1,34 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Piyano Çalma Uygulaması
+Klavyeyle veya mouse ile tarayıcı üzerinden piyano çalmanızı sağlayan web uygulamasıdır.
 
-## Getting Started
+## Demo
+Uygulamanın demosu:
+https://piano-nextjs.vercel.app
 
-First, run the development server:
+## Not
+   Reactjs ile yaptığım projenin netlify demosunda, seste gecikme oluyordu, projeyi nextjs'e taşıyıp vercel demosunu çıkarınca bu gecikme sorunu ortadan kalktı, şuan sorunsuz çalışıyor. 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Uygulamayı Çalıştırma
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Aşağıdaki komutla projeyi klonlayın.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+    git clone https://github.com/bgryks18/piano-nextjs.git
+Ve proje klasörüne geçin
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+    cd piano-nextjs
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Uygulamanın çalışabilmesi için gerekli paketlerin kurulu olması gerekir. 
+Aşağıdaki komut ile uygulamanın bağımlı olduğu paketlerin hepsi kurulur.
 
-## Learn More
+    npm install
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Uygulamayı Test Etme
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    npm start
+  komutu ile uygulamayı çalıştırın ve sunucu adresinizi tarayıcıda açın.
+  Web sayfanız açıldığında piyano keyboard'u sizi karşılayacaktır. Her piyano tuşunun, tetikleneceği klavye tuşu üzerinde yazıyor. Bu tuşlara basarak veya mouse ile tıklayarak notayı çaldırabilirsiniz. Büyük tuşları kullanmak için shifte basılı tutabilirsiniz. İsterseniz kendiniz bu tuşları **/utils/keys.js** dosyasından kendinize göre değiştirebilirsiniz.
+  
+## Uygulama Nasıl Çalışıyor
+     /utils/sounds/
 
-## Deploy on Vercel
+dizininde ses dosyaları tutuluyor.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+     /utils/keys.js 
+   dosyasında belirlenip export edilen obje, ses dosyası ismine karşılık gelen klavye tuşlarını belirliyor.
+   Property ismi, ses dosyası ismini, 
+   Property değeri, hangi tuşa basıldığında çalacağını belirtiyor.
+   
+   Property değerini klavyedeki bir tuş olarak tanımlayabilirsiniz, örneğin 'q' gibi. Bu string olmalıdır.
+   
+   Ya da bir keyCode olarak tanımlayabilirsiniz, örneğin 81 gibi. Bu number olmalıdır.
+   
+   Eğer **/utils/sounds/** dizinine bir ses dosyası ekleyip, **/utils/keys.js** dosyasındaki objeye dosya ismiyle aynı bir property eklerseniz, uygulamada bir piano tuşu daha oluşacaktır. Yani daha ince veya daha kalın bir nota tonu eklemenin yolu budur.
+   
+## Mobil Uyumluluk
+   Tasarım, 400 pixel'e kadar uyumludur. Daha altında bozulur. Ancak işlev olarak mobilde çalıştırmaya uygun değildir.
