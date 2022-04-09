@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
     "next": "12.1.4",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "eslint": "8.13.0",
